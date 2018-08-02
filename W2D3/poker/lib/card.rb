@@ -18,6 +18,14 @@ class Card
     value == card.value
   end
 
+  def <(card)
+    value < card.value
+  end
+
+  def >(card)
+    value > card.value
+  end
+
   def to_s
     "#{value}#{SYMBOLS[suit]}"
   end
