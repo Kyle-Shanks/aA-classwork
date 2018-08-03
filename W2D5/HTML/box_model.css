@@ -1,0 +1,42 @@
+
+div {
+  min-height: 400px;
+  width: 200px;
+  box-sizing: border-box;
+  border: 5px solid black;
+  padding: 50px;
+}
+
+#first-div {
+  background-color: #39cccc;
+}
+
+#second-div {
+  background-color: #ff4136;
+}
+
+p {
+  background-color: #7fdbff;
+}
+
+.img-1-container {
+  height: 600px;
+  width: 200px;
+  background-color: #C0FFEE;
+}
+
+.img-1-container img {
+  width: 100%;
+}
+
+.img-1-container:last-child {
+  height: auto;
+  width: auto;
+  min-height: 400px;
+  min-width: 200px;
+  max-width: 600px;
+}
+
+.special-div {
+  min-height: 10px;
+}
