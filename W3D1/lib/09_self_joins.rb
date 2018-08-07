@@ -244,19 +244,19 @@ def craiglockhart_to_sighthill
     AND
       stopb.name IN (
         SELECT
-          DISTINCT stopb.name
+          DISTINCT stopc.name
         FROM
-          routes b
+          routes c
         JOIN
-          routes c ON (b.company = c.company AND b.num = c.num)
-        JOIN
-          stops stopb ON (b.stop_id = stopb.id)
+          routes d ON (c.company = d.company AND c.num = d.num)
         JOIN
           stops stopc ON (c.stop_id = stopc.id)
+        JOIN
+          stops stopd ON (d.stop_id = stopd.id)
         WHERE
-          stopc.name = 'Sighthill'
+          stopd.name = 'Sighthill'
       )
-  
+
   -- SELECT
   --   DISTINCT a.num, a.company, stopb.name, b.num, b.company
   -- FROM
