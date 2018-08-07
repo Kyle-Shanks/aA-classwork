@@ -1,0 +1,5 @@
+require_relative 'questions_database_classes/users'
+require_relative 'questions_database_classes/questions'
+require_relative 'questions_database_classes/question_follows'
+require_relative 'questions_database_classes/question_replies'
+require_relative 'questions_database_classes/question_likes'
