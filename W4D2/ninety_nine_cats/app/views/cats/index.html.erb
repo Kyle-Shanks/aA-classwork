@@ -1,0 +1,17 @@
+<div class="gutter-container">
+  <h1>All the Cats!</h1>
+
+  <div class="cat-collection-container">
+    <% @cats.each do |cat| %>
+      <div class="card cat-container">
+        <!-- Add an image here later -->
+        <h3><%= cat.name %></h3>
+        <a href="<%= cat_url(cat) %>">View Cat</a>
+      </div>
+    <% end %>
+  </div>
+
+  <a href="<%= new_cat_url %>">Add a New Cat!</a>
+  <br>
+  <a href="<%= new_cat_rental_request_url %>">Submit a Rental Request!</a>
+</div>

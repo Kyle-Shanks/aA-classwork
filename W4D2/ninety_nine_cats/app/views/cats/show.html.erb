@@ -1,0 +1,42 @@
+<% reservations = @cat.current_reservations %>
+<div class="gutter-container">
+  <h1>Hi, my name is <%= @cat.name %>!</h1>
+
+  <div class="card">
+    <!-- Add image here later -->
+    <h2><%= @cat.name %></h2>
+    <h4>Color: <%= @cat.color %></h4>
+    <h4>Age: <%= @cat.age %></h4>
+    <h4>Sex: <%= @cat.sex %></h4>
+
+    <h4>- Description -</h4>
+    <p><%= @cat.description %></p>
+
+    <h4>- Current Rental Reservations -</h4>
+    <% unless reservations.empty? %>
+      <ul>
+        <% reservations.each do |res| %>
+          <li style="color: <%= res.pending? ? '#AAAAAA':'#333333' %>">
+            Start: <%= res.start_date %> <br>
+            End: <%= res.end_date %>
+            <% if res.pending? %>
+              <form style="display: inline" action="<%= approve_cat_rental_request_url(res) %>" method="post">
+                <button>Approve</button>
+              </form>
+              <form style="display: inline" action="<%= deny_cat_rental_request_url(res) %>" method="post">
+                <button>Deny</button>
+              </form>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>None</p>
+    <% end %>
+    <br>
+
+    <a href="<%= edit_cat_url(@cat) %>">Edit <%= @cat.name %></a>
+  </div>
+
+  <a href="<%= cats_url %>">Back to All Cats Page</a>
+</div>
