@@ -1,21 +1,23 @@
-.gutter-container {
-  margin: 0 auto;
-  padding: 40px;
-  width: 88%;
-  max-width: 1100px;
+.cat-collection-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.card {
-  background-color: white;
-  padding: 20px;
-  margin: 10px;
-  box-shadow: 0 2px 8px -1px rgba(0,0,0,0.2);
-  border-radius: 3px;
+.cat-img {
+  background: url('https://i1.wp.com/chartcons.com/wp-content/uploads/Funny-Cat-Jokes2.jpg?resize=1021%2C576&ssl=1') no-repeat center;
+  background-size: cover;
+  height: 300px;
+  width: auto;
 }
 
 .cat-container {
-  display: inline-block;
-  width: 200px;
+  flex: 1 1 0;
+  min-width: 240px;
+  max-width: 360px;
+}
+
+.cat-container:hover {
+  box-shadow: 0 2px 10px -1px rgba(0,0,0,0.2);
 }
 
 li {

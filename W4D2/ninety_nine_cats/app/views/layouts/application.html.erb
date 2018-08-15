@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav class="nav-bar">
+      <div class="gutter-container">
+        <div class="logo"><a href="<%= cats_url %>">99 Cats</a></div>
+      </div>
+    </nav>
+
+    <div class="page-container">
+
+      <%= yield %>
+
+    </div>
   </body>
 </html>

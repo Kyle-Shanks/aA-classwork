@@ -5,6 +5,7 @@
     <% @cats.each do |cat| %>
       <div class="card cat-container">
         <!-- Add an image here later -->
+        <div class="cat-img"></div>
         <h3><%= cat.name %></h3>
         <a href="<%= cat_url(cat) %>">View Cat</a>
       </div>
