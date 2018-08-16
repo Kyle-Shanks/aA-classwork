@@ -1,0 +1,25 @@
+.nav-bar {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  line-height: 60px;
+  background-color: #FFF;
+  box-shadow: 0 2px 12px -1px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.logo a {
+  border: none;
+}
+
+.nav-bar .button {
+  font-size: 12px;
+  margin: 0 10px;
+  background-color: #9D9D9D;
+}
+.nav-bar .button:hover {
+  background-color: #BDBDBD
+}

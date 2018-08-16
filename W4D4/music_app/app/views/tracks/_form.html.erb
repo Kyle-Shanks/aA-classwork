@@ -1,0 +1,58 @@
+<% if edit %>
+  <% action_url = track_url(track) %>
+  <% a_id = track.album_id %>
+  <% bottom_text = 'Update Track' %>
+<% else %>
+  <% action_url = tracks_url %>
+  <% a_id = album.id %>
+  <% bottom_text = 'Add Track' %>
+<% end %>
+
+<form class="card centered" action="<%= action_url %>" method="post">
+  <%= auth_token %>
+  <% if edit %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <div class="card-section">
+    <label for="track_title">Track Title: </label>
+    <input id="track_title" type="text" name="track[title]" value="<%= track.title %>">
+    <br>
+
+    <label for="track_number">Track Number: </label>
+    <input id="track_number" type="text" name="track[ord]" value="<%= track.ord %>">
+    <br>
+
+    <label for="track_album">Album: </label>
+    <select id="track_album" name="track[album_id]">
+      <option disabled <%= a_id ? '' : 'selected' %>>-- Select Album --</option>
+      <% Album.all.each do |a| %>
+        <option value="<%= a.id %>" <%= a_id == a.id ? 'selected' : '' %>>
+          <%= a.title %>
+        </option>
+      <% end %>
+    </select>
+    <br><br>
+
+    <label>Bonus Track?: </label>
+    <br>
+    <label for="bonus">
+      <input id="bonus" type="radio" name="track[bonus_track]" value="true"
+        <%= track.bonus_track ? "checked" : "" %>>
+      Yes
+    </label>
+    <br>
+    <label for="standard">
+      <input id="standard" type="radio" name="track[bonus_track]" value="false"
+        <%= track.bonus_track ? "" : "checked" %> >
+      No
+    </label>
+    <br><br>
+
+    <label for="track_lyrics">Lyrics</label><br>
+    <textarea id="track_lyrics" name="track[lyrics]"><%= track.lyrics %></textarea>
+    <br>
+
+    <input class="button" type="submit" value="<%= bottom_text %>">
+  </div>
+</form>

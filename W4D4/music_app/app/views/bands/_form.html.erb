@@ -1,0 +1,21 @@
+<% if edit %>
+  <% action_url = band_url(band) %>
+  <% button_text = "Update Band" %>
+<% else %>
+  <% action_url = bands_url %>
+  <% button_text = "Add Band" %>
+<% end %>
+
+<form class="card centered" action="<%= action_url %>" method="post">
+  <%= auth_token %>
+  <% if edit %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+
+  <div class="card-section">
+    <label for="band_name">Band Name: </label>
+    <input type="text" name="band[name]" value="<%= band.name %>">
+  </div>
+
+  <input class="button" type="submit" value="<%= button_text %>">
+</form>

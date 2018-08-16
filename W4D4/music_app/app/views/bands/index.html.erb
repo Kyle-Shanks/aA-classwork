@@ -1,0 +1,16 @@
+<h1 class="centered">Homepage</h1>
+
+<div class="bands-container">
+  <% @bands.each do |band| %>
+  <div class="card">
+    <h2><%= band.name %></h2>
+    <form action="<%= band_url(band.id) %>" method="get">
+      <input class="button" type="submit" value="View info">
+    </form>
+  </div>
+  <% end %>
+</div>
+
+<form action="<%= new_band_url %>" method="get">
+  <input class="button" type="submit" value="Add a New Band">
+</form>

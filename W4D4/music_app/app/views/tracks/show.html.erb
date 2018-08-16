@@ -1,0 +1,32 @@
+<!-- Show track info. Also include link to track's album page and an edit and delete button -->
+<h1 class="centered">Track Info</h1>
+
+<div class="card centered">
+  <div class="card-section">
+    <div class="space">
+      <h3>Title</h3>
+      <p><%= @track.title %></p>
+    </div>
+    <div class="space">
+      <h3>Album</h3>
+      <p><%= @track.album.title %></p>
+    </div>
+    <div class="more-space">
+      <h3>Band</h3>
+      <p><%= @track.album.band.name %></p>
+    </div>
+
+    <form class="rela-inline" action="<%= edit_track_url(@track) %>" method="get">
+      <input class="button" type="submit" value="Edit Track">
+    </form>
+    <form class="rela-inline" action="<%= track_url(@track) %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="DELETE">
+      <input class="button red" type="submit" value="Delete Track">
+    </form>
+  </div>
+
+  <form action="<%= album_url(@track.album_id) %>" method="get">
+    <input class="button" type="submit" value="View Album Page">
+  </form>
+</div>

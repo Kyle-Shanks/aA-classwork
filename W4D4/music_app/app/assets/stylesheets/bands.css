@@ -1,0 +1,19 @@
+.bands-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid #DDD;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.bands-container .card{
+  flex: 1 1 0;
+  min-width: 200px;
+  margin: 10px;
+  padding: 20px;
+}
+.bands-container .card:hover {
+  flex-grow: 1.5;
+}

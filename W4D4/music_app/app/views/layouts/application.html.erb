@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MusicApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav class="nav-bar">
+      <div class="rela-block gutter-container">
+        <h3 class="float left logo"><a href="<%= bands_url %>">Music App</a></h3>
+        <div class="float right nav-buttons">
+          <% if current_user %>
+            <p class="rela-inline">Hello, <%= current_user.username %>!</p>
+            <form class="rela-inline" action="<%= session_url %>" method="post">
+              <input type="hidden" name="_method" value="DELETE">
+              <%= auth_token %>
+              <input class="button grey" type="submit" value="Log out">
+            </form>
+          <% else %>
+            <form class="rela-inline" action="<%= new_user_url %>" method="get">
+              <%= auth_token %>
+              <input class="button grey" type="submit" value="Sign up">
+            </form>
+            <form class="rela-inline" action="<%= new_session_url %>" method="get">
+              <%= auth_token %>
+              <input class="button grey" type="submit" value="Log in">
+            </form>
+          <% end %>
+        </div>
+      </div>
+    </nav>
+
+    <div class="rela-block content-container">
+      <div class="rela-block gutter-container">
+
+        <% if flash[:errors] %>
+          <ul class="errors">
+            <% flash[:errors].each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        <% end %>
+
+        <%= yield %>
+      </div>
+    </div>
+
+    <!-- Footer stuff maybe? -->
+
+  </body>
+</html>

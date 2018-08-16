@@ -1,0 +1,31 @@
+<h1 class="centered">Welcome to the <%= @band.name %> band page!</h1>
+
+<div class="card centered">
+
+  <div class="card-section">
+    <h2><%= @band.name %></h2>
+    <div class="more-space">
+      <h3>Albums</h3>
+      <% unless @band.albums.empty? %>
+      <% @band.albums.each do |album| %>
+      <a href="<%= album_url(album) %>"><%= album.title %></a><br>
+      <% end %>
+      <% else %>
+      <p>none :/</p>
+      <% end %>
+    </div>
+
+    <form action="<%= new_band_album_url(@band.id) %>" method="get">
+      <input class="button" type="submit" value="Add new album">
+    </form>
+  </div>
+
+  <form class="rela-inline" action="<%= edit_band_url(@band.id) %>" method="get">
+    <input class="button" type="submit" value="Edit Band Info">
+  </form>
+  <form class="rela-inline" action="<%= band_url(@band) %>" method="post">
+    <%= auth_token %>
+    <input type="hidden" name="_method" value="DELETE">
+    <input class="button red" type="submit" value="Delete Band">
+  </form>
+</div>

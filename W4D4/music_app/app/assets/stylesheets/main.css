@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  transition: 0.33s cubic-bezier(0.55,0,0.2,1);
+}
+
+body {
+  background-color: #F4F4F4;
+  transition: 0;
+  font-family: Helvetica, sans-serif;
+}
+
+.rela-inline {
+  position: relative;
+  display: inline-block;
+}
+
+.rela-block {
+  position: relative;
+  display: block;
+}
+
+.float {
+  position: relative;
+  display: inline-block;
+}
+
+.float.left {
+  float: left;
+}
+.float.right {
+  float: right;
+}
+
+.content-container {
+  padding: 80px 0;
+}
+
+.gutter-container {
+  width: 88%;
+  max-width: 980px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+.card {
+  max-width: 600px;
+  padding: 40px;
+  margin: 0 auto 40px;
+  background-color: #FFF;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px -1px rgba(0,0,0,0.15);
+}
+.card .button {
+  margin: 10px 4px;
+}
+.card-section {
+  max-width: 480px;
+  border: 1px solid #D2D2D2;
+  border-radius: 4px;
+  padding: 20px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.button {
+  min-width: 120px;
+  margin: 20px 10px;
+  padding: 6px 20px;
+  color: #FFF;
+  font-size: 16px;
+  background-color: #FD2D65;
+  border: none;
+  border-radius: 3px;
+  box-shadow: 0 2px 6px -1px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+.button:hover {
+  background-color: #FF6DA5;
+}
+.button.red {
+  background-color: #C00;
+}
+.button.red:hover {
+  background-color: #F00;
+}
+
+.errors {
+  color: red;
+}

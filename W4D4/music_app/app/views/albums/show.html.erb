@@ -1,0 +1,53 @@
+<h1 class="centered">- Album Info -</h1>
+
+<div class="card centered">
+  <div class="card-section">
+    <div class="space">
+      <h3>Title</h3>
+      <p><%= @album.title %></p>
+    </div>
+    <div class="space">
+      <h3>Band</h3>
+      <p><%= @album.band.name %></p>
+    </div>
+    <div class="space">
+      <h3 class="space-before" >Year</h3>
+      <p><%= @album.year %></p>
+    </div>
+    <div class="more-space">
+      <h3>Album Type</h3>
+      <p><%= @album.live_album ? 'Live Album' : 'Studio Album' %></p>
+    </div>
+
+    <div class="more-space">
+      <h3>Tracks</h3>
+      <% unless @album.tracks.empty? %>
+      <% @album.tracks.order(:ord).each do |t| %>
+      <p class="<%= t.ord%2==0 ? "grey" : "" %> padded">
+        <a href="<%= track_url(t) %>"><%= t.ord %>. <%= t.title %></a>
+      </p>
+      <% end %>
+      <% else %>
+      <p>none :/</p>
+      <% end %>
+    </div>
+
+    <form class="rela-inline" action="<%= edit_album_url(@album) %>" method="get">
+      <input class="button" type="submit" value="Edit Album">
+    </form>
+
+    <form class="rela-inline" action="<%= new_album_track_url(@album) %>" method="get">
+      <input class="button" type="submit" value="Add Track">
+    </form>
+
+    <form class="rela-inline" action="<%= album_url(@album) %>" method="post">
+      <%= auth_token %>
+      <input type="hidden" name="_method" value="DELETE">
+      <input class="button red" type="submit" value="Delete Album">
+    </form>
+  </div>
+
+  <form action="<%= band_url(@album.band_id) %>" method="get">
+    <input class="button" type="submit" value="View Band Page">
+  </form>
+</div>
