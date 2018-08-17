@@ -7,7 +7,7 @@
   height: 60px;
   line-height: 60px;
   background-color: #FFF;
-  box-shadow: 0 2px 12px -1px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 12px -1px rgba(0,0,0,0.15);
   overflow: hidden;
 }
 
