@@ -1,0 +1,103 @@
+iframe{
+  width: 100%;
+}
+
+.main-content {
+  padding: 20px;
+  line-height: 18px;
+}
+
+.flex-input {
+  display: flex;
+}
+
+.flex-input input {
+  flex: 1 1 0;
+}
+
+h1 {
+  text-decoration: underline;
+  font-weight: bold;
+  font-family: $serif;
+  font-size: 26px;
+  font-style: italic;
+  margin-bottom: 5px;
+  line-height: 32px;
+}
+
+h2 {
+  font-weight: bold;
+}
+
+h2.header {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+h4 {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+p.author {
+  color: $gray;
+  margin-bottom: 10px;
+  font-size: 11px;
+}
+
+.main-content ul li {
+  list-style: disc;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.main-content a {
+  text-decoration: underline;
+  color: $blue;
+  font-family: $sans-serif;
+  font-size: 11px;
+}
+
+.main-content .bold-list li {
+  font-weight: bold;
+  margin-bottom: 4px;
+  font-size: 11px;
+  line-height: 14px;
+}
+
+.cleared {
+  clear: both;
+  padding: 10px 0;
+
+}
+
+.flex-input input {
+  border: 1px solid $gray;
+  padding: 0 10px;
+  font-family: $sans-serif;
+
+}
+
+.flex-input button {
+  border-radius: 0 3px 3px 0;
+  padding: 4px 8px;
+
+}
+
+.small {
+  margin-top: 10px;
+  font-size: 10px;
+  color: $gray;
+  line-height: 14px;
+  text-align: center;
+}
+
+.office-pic{
+  object-fit: cover;
+  height: 100px;
+}
