@@ -1,0 +1,44 @@
+/* PHASE 2: Notifications */
+.notifications:hover .badge {
+  background-color: red;
+}
+
+.notifications:hover #notifications-dropdown {
+  display: block;
+}
+
+.badge {
+  display: inline-block;
+  color: white;
+  border-radius: 100%;
+  background-color: black;
+  padding: 1px 6px;
+  font-size: 14px;
+}
+
+#notifications-dropdown {
+  display: none;
+  font-size: 14px;
+  color: black;
+  border-radius: 0 0 5px 5px;
+  border: 1px solid #CCC;
+  position: absolute;
+  top: 100%;
+  overflow: hidden;
+}
+
+#notifications-dropdown > li {
+  padding: 10px 20px;
+  display: block;
+  background-color: white;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+#notifications-dropdown > li:hover {
+  background-color: #EEE;
+}
+
+#notifications-dropdown > li + li {
+  border-top: 1px solid #CCC;
+}

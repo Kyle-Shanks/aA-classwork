@@ -1,0 +1,23 @@
+<h2><%= @sub.title%></h2>
+
+<div>
+  <p><strong>Title:</strong> <%= @sub.title%></p>
+  <p><strong>Description:</strong> <%= @sub.description%></p>
+  <p><strong>Moderator:</strong> <%= @sub.moderator.username%></p>
+</div>
+
+<h3>Posts</h3>
+
+<% if @sub.posts.empty? %>
+  <p>no posts yet</p>
+<% else %>
+  <ul>
+    <% @sub.posts.each do |post|%>
+      <li>
+        <a href="<%= post_url(post.id)%>">
+          <%= post.title %>
+        </a>
+      </li>
+    <%end%>
+  </ul>
+<% end %>
