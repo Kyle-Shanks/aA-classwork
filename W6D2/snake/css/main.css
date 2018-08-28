@@ -1,0 +1,14 @@
+.board {
+  height: 400px;
+  width: 400px;
+  border: 10px solid black;
+  margin: 80px auto;
+  position: relative;
+}
+
+.segment {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: green;
+}

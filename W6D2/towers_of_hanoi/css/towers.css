@@ -1,0 +1,53 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-size: 48px;
+  text-align: center;
+}
+
+.towers {
+  margin: 0 auto;
+  height: 240px;
+  width: 600px;
+  display: flex;
+}
+
+.tower {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column-reverse;
+  border-bottom: 10px solid black;
+  margin: 0 10px;
+  padding-bottom: 10px;
+}
+
+.tower:hover {
+  border-bottom: 10px solid blue;
+}
+
+.tower.selected {
+  border-bottom: 10px solid red;
+}
+
+.tower.game-over:hover {
+  border-bottom: 10px solid #000;
+}
+
+.disk {
+  height: 50px;
+  background: url("https://i.pinimg.com/236x/13/1d/0a/131d0aa8bb5830bbf5bd2bf5981ba5ca--silhouette-files-silhouette-design.jpg") no-repeat center;
+  border-radius: 40px;
+  width: 100%;
+  background-size: 90%;
+}
+
+.disk-1 {
+  background-position: top;
+}
+
+.disk-3 {
+  background-position: bottom;
+}
