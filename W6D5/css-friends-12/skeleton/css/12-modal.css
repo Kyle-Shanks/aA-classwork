@@ -1,0 +1,62 @@
+/* PHASE 12: Modal */
+.modal-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.3s ease;
+  z-index: 2;
+}
+
+.modal-form {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.3s ease;
+  width: 360px;
+  background: white;
+  border-radius: 5px;
+  padding: 20px;
+  z-index: 2;
+}
+
+.modal {
+  pointer-events: none;
+  z-index: 2;
+}
+
+.modal h1 {
+  font-size: 36px;
+  font-weight: 300;
+}
+
+.modal-form-top {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.modal.is-open {
+  pointer-events: all;
+}
+.modal.is-open .modal-form {
+  top: 40%;
+  opacity: 1;
+}
+.modal.is-open .modal-screen {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 36px;
+}
+.modal-close:hover {
+  color: red;
+  cursor: pointer;
+}

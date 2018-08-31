@@ -1,0 +1,117 @@
+body {
+  font-family: 'Raleway', monospace;
+  background: url("https://vignette.wikia.nocookie.net/steamtradingcards/images/e/ed/Transistor_Background_The_Transistor.jpg/revision/latest?cb=20140529061638") no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+input {
+  font-family: 'Raleway', monospace;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+  color: #d8f4ef;
+  font-weight: 300;
+}
+
+p {
+  color: #64D3Cf;
+  line-height: 24px;
+}
+
+.section {
+  border: 5px solid #cefde3;
+  background-color: rgba(0, 0, 0, 0.85);
+  color: white;
+  margin: 30px auto;
+  max-width: 400px;
+  padding: 20px;
+  box-shadow: 0 0 20px 0px rgba(206,253,227,0.5);
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.flex-parent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tab-header-list li {
+  padding: 5px 0px;
+  cursor: pointer;
+  flex: 1 1 0;
+  text-align: center;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  box-sizing: border-box;
+}
+
+li.selected {
+  color: #64D3Cf;
+  background-color: rgba(255,255,255, 0.23);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-bottom: 1px solid transparent;
+}
+
+.tab-content {
+  padding: 20px;
+  background-color: rgba(255,255,255, 0.23);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-top: none;
+}
+
+.autocomplete-input {
+  border: none;
+  width: 80%;
+  max-width: 600px;
+  padding: 5px 10px;
+  font-size: 14px;
+  background-color: rgba(255,255,255,0.2);
+  color: #d8f4ef;
+  border-bottom: 2px solid #64D3Cf;
+  transition: 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.autocomplete ul {
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+.autocomplete ul::-webkit-scrollbar {
+  background-color: transparent;
+  width: 10px;
+}
+
+.autocomplete ul::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.autocomplete ul::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 6px;
+  width: 6px;
+}
+
+
+.section.autocomplete {
+  min-height: 300px;
+}
+
+.autocomplete-input:focus {
+  outline: none;
+  border-bottom: 2px solid #d8f4ef;
+}
+
+/* .tab-content p::before {
+  content: "";
+  position: relative;
+  height: 24px;
+  width: 24px;
+  background-color: #0ba147;
+  border: 2px dashed #FFF;
+} */
