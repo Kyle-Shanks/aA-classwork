@@ -1,0 +1,27 @@
+.poke-header {
+  text-align: center;
+}
+
+.pokedex-container ul {
+  padding: 0;
+}
+
+.poke-card {
+  position: relative;
+  list-style: none;
+  max-width: 400px;
+  font-size: 24px;
+  background-color: #FFF;
+  border-radius: 5px;
+  padding: 40px;
+  margin: 40px auto;
+  box-shadow: 0 2px 18px -1px rgba(0,0,0,0.15);
+  text-align: center;
+}
+.poke-card + .poke-card {
+  margin-top: 40px;
+}
+
+.poke-img {
+  height: 100px;
+}
